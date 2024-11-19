@@ -1,0 +1,112 @@
+malloc():
+
+Syntax: void* malloc(size_t size);
+
+Allocates a block of memory of the specified size (in bytes) and returns a pointer to the beginning of the block.
+
+Memory allocated using malloc() is uninitialized.
+
+In the program:
+
+ptr = (int*)malloc(n * sizeof(int));
+
+
+
+
+calloc():
+
+Syntax: void* calloc(size_t num, size_t size);
+
+Allocates memory for an array of num elements, each of them size bytes long, and initializes all bytes to zero.
+
+If you wanted to use calloc(), you would replace the malloc() call with:
+
+ptr = (int*)calloc(n, sizeof(int));
+
+
+
+
+
+realloc():
+
+Syntax: void* realloc(void* ptr, size_t size);
+
+Changes the size of the memory block pointed to by ptr to size bytes. The contents will be unchanged up to the minimum of the old and new sizes.
+
+In the program:
+
+ptr = realloc(ptr, n * sizeof(int));
+
+
+
+
+free():
+
+Syntax: void free(void* ptr);
+
+Deallocates the memory previously allocated by a call to malloc(), calloc(), or realloc(). The pointer ptr must be a pointer to a memory block previously allocated by one of these functions, or be a null pointer.
+
+In the program:
+
+
+free(ptr);
+
+
+
+
+CODE ------>
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+    int *ptr, *cpt, i, n1, n2;
+
+    printf("How many elements you want in the first array: ");
+    scanf("%d", &n1);
+
+    printf("How many elements you want in the second array: ");
+    scanf("%d", &n2);
+
+    ptr = (int *)malloc(n1 * sizeof(int));
+
+    cpt = (int *)calloc(n2, sizeof(int));
+
+    if (ptr == NULL || cpt == NULL) {
+        printf("Memory not allocated.\n");
+        exit(0);
+    }
+
+    printf("Increase the size of the first array: ");
+    scanf("%d", &n1);
+
+    ptr = (int *)realloc(ptr, n1 * sizeof(int));
+
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+        exit(0);
+    }
+
+    for (i = 0; i < n1; i++) {
+        ptr[i] = i + 1;
+    }
+
+    printf("Elements of the first array: ");
+    for (i = 0; i < n1; i++) {
+        printf("%d\t", ptr[i]);
+    }
+    printf("\n");
+
+    for (i = 0; i < n2; i++) {
+        cpt[i] = i + 11;
+    }
+
+    printf("Elements of the second array: ");
+    for (i = 0; i < n2; i++) {
+        printf("%d\t", cpt[i]);
+    }
+    printf("\n");
+
+    free(ptr);
+    free(cpt);
+}
