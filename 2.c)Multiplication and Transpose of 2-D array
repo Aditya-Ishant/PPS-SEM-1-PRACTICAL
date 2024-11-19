@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+void multiply(int first[2][3], int second[3][2], int result[2][2]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            result[i][j] = 0;
+        }
+    }
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 3; k++) {
+                result[i][j] += first[i][k] * second[k][j];
+            }
+        }
+    }
+}
+
+void transpose(int array[2][2], int transposed[2][2]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            transposed[j][i] = array[i][j];
+        }
+    }
+}
+
+void printArray(int array[2][2]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", array[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void main() {
+    int first[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int second[3][2] = {{7, 8}, {9, 10}, {11, 12}};
+    int result[2][2];
+    int transposed[2][2];
+
+    multiply(first, second, result);
+    printf("Result of multiplication:\n");
+    printArray(result);
+
+    transpose(result, transposed);
+    printf("Transposed result:\n");
+    printArray(transposed);
+}

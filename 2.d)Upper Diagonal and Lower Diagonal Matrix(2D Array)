@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+void upper_diagonal(int b[2][2], int row, int col) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            if (i > j) {
+                printf("0\t");
+            } else {
+                printf("%d\t", b[i][j]);
+            }
+        }
+        printf("\n");
+    }
+}
+
+void lower_diagonal(int b[2][2], int row, int col) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            if (i < j) {
+                printf("0\t");
+            } else {
+                printf("%d\t", b[i][j]);
+            }
+        }
+        printf("\n");
+    }
+}
+
+void main() {
+    int a[2][2] = {{1, 2}, {3, 4}};
+    int m = 2, n = 2;
+
+    printf("Upper Diagonal  Matrix:\n");
+    upper_diagonal(a, m, n);
+
+    printf("\nLower Diagonal  Matrix:\n");
+    lower_diagonal(a, m, n);
+}
