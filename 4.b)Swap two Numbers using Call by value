@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void swap(int, int);
+
+void main() {
+    int x, y;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+
+    printf("Before swap x = %d, y = %d\n", x, y);
+
+    swap(x, y);
+
+    printf("After swap x = %d, y = %d\n", x, y);
+}
+
+void swap(int a, int b) {
+    int z;
+    z = a;
+    a = b;
+    b = z;
+    printf("Inside swap function x = %d, y = %d\n", a, b);
+}

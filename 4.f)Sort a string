@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    int n1;
+
+    printf("Enter the length of the string: ");
+    scanf("%d", &n1);
+
+    char string[n1 + 1]; // +1 to account for the null terminator
+
+    printf("Enter the string: ");
+    scanf("%s", string);
+
+    // Temporary variable for swapping
+    char temp;
+    int i, j;
+    int n = strlen(string);
+
+    printf("String before sorting - %s \n", string);
+
+    for (i = 0; i < n - 1; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (string[i] > string[j]) {
+                temp = string[i];
+                string[i] = string[j];
+                string[j] = temp;
+            }
+        }
+    }
+
+    printf("String after sorting  - %s \n", string);
+
+    return 0;
+}
