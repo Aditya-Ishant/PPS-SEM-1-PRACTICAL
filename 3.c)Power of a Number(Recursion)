@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int power(int x, int y);
+
+void main() {
+    int a, b, c;
+
+    printf("Enter the number you want the power of: ");
+    scanf("%d", &a);
+
+    printf("Enter power: ");
+    scanf("%d", &b);
+
+    c = power(a, b);
+
+    // Print the result
+    printf("%d^%d = %d\n", a, b, c);
+}
+
+int power(int x, int y) {
+    if (y == 0) {
+        return 1;
+    }
+    return x * power(x, y - 1);
+}
