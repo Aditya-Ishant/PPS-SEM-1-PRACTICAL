@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+void sortStrings(char a[][50], int n) {
+    char temp[50];
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (strcmp(a[i], a[j]) > 0) {
+                strcpy(temp, a[i]);
+                strcpy(a[i], a[j]);
+                strcpy(a[j], temp);
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    char a[n][50];
+
+    printf("Enter the strings:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%s", a[i]);
+    }
+
+    sortStrings(a, n);
+
+    printf("Sorted array of strings:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s\n", a[i]);
+    }
+
+    return 0;
+}
+

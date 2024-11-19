@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+ void main()
+{
+     int a = 5, b = 10;
+     int logicalResult;
+     logicalResult = (a < b) && (b > 0);
+     printf("Logical AND (5 < 10 && 10 > 0): %d\n", logicalResult);
+     logicalResult = (a > b) || (b > 0);
+     printf("Logical OR (5 > 10 || 10 > 0): %d\n", logicalResult);
+     logicalResult = !(a == b);
+     printf("Logical NOT (!(5 == 10)): %d\n", logicalResult);
+     int x = 5;
+     int y = 3;
+     int bitwiseResult;
+     bitwiseResult = x & y;
+     printf("Bitwise AND (5 & 3): %d\n", bitwiseResult);
+     bitwiseResult = x | y;
+     printf("Bitwise OR (5 | 3): %d\n", bitwiseResult);
+     bitwiseResult = x ^ y;
+     printf("Bitwise XOR (5 ^ 3): %d\n", bitwiseResult);
+     bitwiseResult = ~x;
+     printf("Bitwise NOT (~5): %d\n", bitwiseResult);
+     bitwiseResult = x << 1;
+     printf("Left Shift (5 << 1): %d\n", bitwiseResult);
+     bitwiseResult = x >> 1;
+     printf("Right Shift (5 >> 1): %d\n", bitwiseResult);
+     int max = (a > b) ? a : b;
+     printf("Ternary Operator (max of 5 and 10): %d\n", max);
+ }

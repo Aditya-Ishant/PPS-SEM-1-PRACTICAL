@@ -1,0 +1,25 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+
+ void printmessage();
+ void calculatecirclearea(double radius);
+
+ int main()
+{
+     printmessage();
+     double radius = 5.0;
+     calculatecirclearea(radius);
+     printf("Debug mode is currently disabled.\n");
+     return 0;
+ }
+ void printmessage()
+{
+ printf("The Preprocessor Directives Example!\n");
+}
+
+ void calculatecirclearea(double radius)
+{
+     const double PI = 3.14159;
+     double area = PI * radius * radius;
+     printf("Area of circle with radius %.2f: %.2f\n", radius, area);
+ }

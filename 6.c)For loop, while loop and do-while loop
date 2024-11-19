@@ -1,0 +1,30 @@
+//For loop
+ int main()
+ {
+     int n;
+     printf("Enter a number you want to count: ");
+     scanf("%d", &n);
+     for(int i=1; i<=n; i++)
+     {
+         printf("%d\n", i);
+     }
+     return 0;
+ }
+//While loop
+ int main() {
+     int i = 10;
+     while (i >= 1) {
+         printf("%d\n", i);
+         i--;
+     }
+     return 0;
+ }
+//Do while loop
+ int main() {
+     int i = 1;
+     do {
+         printf("%d\n", i);
+         i++;
+     } while (i <= 10);
+     return 0;
+ }

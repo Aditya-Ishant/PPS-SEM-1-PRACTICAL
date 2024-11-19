@@ -1,0 +1,77 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+
+ struct ListNode
+{
+     int data;
+     struct ListNode* next;
+ };
+
+ struct ListNode* createListNode(int value)
+{
+     struct ListNode* newNode = (struct ListNode*)malloc(sizeof(struct ListNode));
+    newNode->data = value;
+    newNode->next = NULL;
+    return newNode;
+}
+
+ void printLinkedList(struct ListNode* head)
+{
+    struct ListNode* current = head;
+    while (current != NULL) {
+        printf("%d -> ", current->data);
+        current = current->next;
+    }
+   printf("NULL\n");
+}
+
+ struct TreeNode
+{
+     int data;
+     struct TreeNode* left;
+     struct TreeNode* right;
+ };
+
+ struct TreeNode* createTreeNode(int value)
+{
+     struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+     newNode->data = value;
+     newNode->left = NULL;
+     newNode->right = NULL;
+     return newNode;
+ }
+
+ void inorderTraversal(struct TreeNode* root)
+{
+   if (root != NULL) {
+     inorderTraversal(root->left);
+   printf("%d ", root->data);
+    inorderTraversal(root->right);
+}
+}
+
+ void main()
+{
+     struct ListNode* head = createListNode(1);
+     head->next = createListNode(2);
+     head->next->next = createListNode(3);
+     printf("Linked List: ");
+     printLinkedList(head);
+     struct TreeNode* root = createTreeNode(1);
+     root->left = createTreeNode(2);
+     root->right = createTreeNode(3);
+     root->left->left = createTreeNode(4);
+     root->left->right = createTreeNode(5);
+     printf("Inorder Traversal of Binary Tree: ");
+     inorderTraversal(root);
+     printf("\n");
+     struct ListNode* current = head;
+     struct ListNode* nextNode;
+
+     while (current != NULL)
+     {
+         nextNode = current->next;
+         free(current);
+         current = nextNode;
+     }
+ }
