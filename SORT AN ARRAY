@@ -5,7 +5,7 @@ void main() {
     int temp;
     int i, j;
 
-    // Display array before sorting
+
     printf("Before Sorting: ");
     for(i=0; i<6; i++) {
         printf("%d ", a[i]);
@@ -13,9 +13,9 @@ void main() {
     printf("\n");
 
     // Bubble sort algorithm
-    for(i=0; i<5; i++) {  // Only need to go up to the second-to-last element
-        for(j=0; j<5-i; j++) {  // Elements after 5-i are already sorted
-            if(a[j] > a[j+1]) {  // Compare adjacent elements
+    for(i=0; i<5; i++) {  
+        for(j=0; j<5-i; j++) {  
+            if(a[j] > a[j+1]) {  
                 temp = a[j];
                 a[j] = a[j+1];
                 a[j+1] = temp;
@@ -23,7 +23,7 @@ void main() {
         }
     }
 
-    // Display array after sorting
+    
     printf("After Sorting: ");
     for(i=0; i<6; i++) {
         printf("%d ", a[i]);
