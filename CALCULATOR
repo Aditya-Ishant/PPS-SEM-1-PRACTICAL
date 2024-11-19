@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void main() {
+    char y = 'y';
+    do {
+        int i, j, k;
+        char q;
+        
+        printf("Enter two numbers: ");
+        scanf("%d %d", &i, &j);
+        
+        printf("Enter operation (+, -, *, /): ");
+        scanf(" %c", &q); 
+
+        switch (q) {
+            case '+':
+                k = i + j;
+                printf("%d + %d = %d\n", i, j, k);
+                break;
+            case '-':
+                k = i - j;
+                printf("%d - %d = %d\n", i, j, k);
+                break;
+            case '*':
+                k = i * j;
+                printf("%d * %d = %d\n", i, j, k);
+                break;
+            case '/':
+                if (j == 0) {
+                    printf("Cannot divide by 0\n");
+                } else {
+                    k = i / j;
+                    printf("%d / %d = %d\n", i, j, k);
+                }
+                break;
+            default:
+                printf("Wrong operation\n");
+                break;
+        }
+
+        printf("Do you want to continue (y or n)? ");
+        scanf(" %c", &y); 
+    } while (y == 'y');
+}
