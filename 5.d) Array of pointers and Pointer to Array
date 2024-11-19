@@ -1,0 +1,16 @@
+void main()
+// {
+//     int a[]={10,20,30,40,50};
+//     int *ptr;
+//     int *cpt[5];                //array of pointer
+//     for(int i=0;i<5;i++)
+//     {
+//         cpt[i]=&a[i];
+//     }
+//     ptr =a;                      //pointer to array
+//     printf("%d\t%d",ptr,*ptr);
+//     for(int i=0;i<5;i++)
+//     {
+//         printf("\n%d",*cpt[i]);
+//     }
+// }

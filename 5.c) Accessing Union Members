@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+union student {
+    char name[20];
+    int class;
+    int rollno;
+};
+
+union student s;
+
+void main() {
+    printf("Enter name: ");
+    scanf("%s", s.name);
+    printf("\nName: %s\n", s.name);
+
+    printf("Enter class: ");
+    scanf("%d", &s.class);
+    printf("Class: %d\n", s.class);
+
+    printf("Enter roll number: ");
+    scanf("%d", &s.rollno);
+    printf("Roll Number: %d\n", s.rollno);
+}
