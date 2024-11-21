@@ -1,20 +1,22 @@
 #include <stdio.h>
 
-void search(char *ptr, char key);
+void search(const char *ptr, char key);
 
-void main() {
+int main() {
     char key, str[100];
 
     printf("Enter the string: ");
-    scanf("%s", str);
+    scanf("%99s", str);
 
     printf("Enter the character you want to find occurrence of: ");
     scanf(" %c", &key);
 
     search(str, key);
+
+    return 0;
 }
 
-void search(char *ptr, char key) {
+void search(const char *ptr, char key) {
     int count = 0;
 
     while (*ptr != '\0') {
